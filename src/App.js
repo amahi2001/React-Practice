@@ -5,7 +5,7 @@ function App() {
     {
       title: "yeee Insurance",
       amount: 297,
-      date: new Date(2022, 9, 29).toDateString(),
+      date: new Date(2022, 9, 29),
     },
   ];
 
