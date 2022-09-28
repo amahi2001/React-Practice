@@ -2,7 +2,6 @@ import "./ExpenseItems.css";
 import ExpenseDate from "./ExpenseDate";
 //props are k, v pairs
 function ExpenseItem(props){
-  console.log(props)
   return (
     <div className="expense-item">
       <ExpenseDate
