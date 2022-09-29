@@ -2,12 +2,12 @@ import "./ExpenseItems.css";
 import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
 
-const onButtonClick = () => {
-  console.log('Clicked!')
-}
 
 //props are k, v pairs
 const ExpenseItem = (props) => {
+  const onButtonClick = () => {
+    console.log('Clicked!')
+  }
   return (
     <Card className="expense-item">
       <ExpenseDate date={props.date} />
