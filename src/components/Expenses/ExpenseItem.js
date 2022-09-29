@@ -1,7 +1,6 @@
 import "./ExpenseItems.css";
 import ExpenseDate from "./ExpenseDate";
-import Card from "./Card";
-
+import Card from "../UI/Card";
 //props are k, v pairs
 function ExpenseItem(props) {
   return (
