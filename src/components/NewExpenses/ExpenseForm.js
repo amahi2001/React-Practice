@@ -13,7 +13,13 @@ export default function ExpenseForm() {
       date: new Date(EnteredDate)
     }
     console.log(expenseData)
-  };  
+    //clearing the form
+    setEnteredAmount('');
+    setEnteredTitle('');
+    setEnteredDate('');
+  };
+  
+  console.log(expenseData);
   //title
   const [EnteredTitle, setEnteredTitle] = useState("");
   const titleChangeHandler = (event) => {
@@ -38,7 +44,7 @@ export default function ExpenseForm() {
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input onChange={titleChangeHandler} type="text" />
+          <input onChange={titleChangeHandler} type="text" value = {EnteredTitle}/>
         </div>
 
         <div className="new-expense__control">
@@ -48,6 +54,7 @@ export default function ExpenseForm() {
             type="number"
             min="0.01"
             step="0.01"
+            value = {EnteredAmount}
           />
         </div>
 
@@ -58,6 +65,7 @@ export default function ExpenseForm() {
             type="date"
             min="2020-01-01"
             max="2025-12-31"
+            value = {EnteredDate}
           />
         </div>
 
