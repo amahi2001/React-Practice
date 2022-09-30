@@ -1,18 +1,19 @@
 import "./ExpenseItems.css";
 import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
-// import React, { useState } from "react";
+import React, { useState } from "react";
 
 
 //props are k, v pairs
 const ExpenseItem = (props) => {
 
   //this is a hook, can only be called inside of component functions
-  // const [title, setTitle] = useState(props.title); 
+  //title will first be "props.title" but will be changed to "updated" when setTitle is called
+  const [title, setTitle] = useState(props.title); 
 
-  // const onButtonClick = () => {
-  //   setTitle('updated');
-  // }
+  const onButtonClick = () => {
+    setTitle('updated');
+  }
   return (
     <Card className="expense-item">
       <ExpenseDate date={props.date} />
@@ -20,7 +21,7 @@ const ExpenseItem = (props) => {
         <h2>{title}</h2>
         <div className="expense-item__price">${props.amount}</div>
       </div>
-      {/* <button onClick={onButtonClick}>Change Title</button> */}
+      <button onClick={onButtonClick}>Change Title</button>
     </Card>
   );
 };
