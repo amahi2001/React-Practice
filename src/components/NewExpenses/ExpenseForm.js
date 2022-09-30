@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./ExpenseForm.css";
 
-export default function ExpenseForm() {
+export default function ExpenseForm(props) {
 
-  //form
+  //form submit function
   const submitHandler = (event) => {
     event.preventDefault(); //this makes sure the page doesn't refresh on submit
 
@@ -12,14 +12,14 @@ export default function ExpenseForm() {
       amount: EnteredAmount,
       date: new Date(EnteredDate)
     }
-    console.log(expenseData)
+    props.onSaveExpenseData(expenseData);
     //clearing the form
     setEnteredAmount('');
     setEnteredTitle('');
     setEnteredDate('');
   };
   
-  console.log(expenseData);
+
   //title
   const [EnteredTitle, setEnteredTitle] = useState("");
   const titleChangeHandler = (event) => {
