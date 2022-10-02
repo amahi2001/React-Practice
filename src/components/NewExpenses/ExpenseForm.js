@@ -7,11 +7,13 @@ export default function ExpenseForm(props) {
   const submitHandler = (event) => {
     event.preventDefault(); //this makes sure the page doesn't refresh on submit
 
+    //saving the input vales as an object (using useState)
     const expenseData = {
       title: EnteredTitle,
       amount: EnteredAmount,
       date: new Date(EnteredDate)
     }
+    //passing the object to parent component via property
     props.onSaveExpenseData(expenseData);
     //clearing the form
     setEnteredAmount('');
