@@ -11,7 +11,7 @@ export default function ExpenseForm(props) {
     const expenseData = {
       title: EnteredTitle,
       amount: EnteredAmount,
-      date: new Date(EnteredDate)
+      date: new Date(EnteredDate.replace(/-/g, '\/'))
     }
     //passing the object to parent component via property
     props.onSaveExpenseData(expenseData);
