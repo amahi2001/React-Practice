@@ -8,11 +8,13 @@ const  App = () => {
       title: "some Insurance",
       amount: 297,
       date: new Date(2022, 9, 29),
+      id: Math.random().toString()
     },
     {
       title: "Abrar's element",
       amount: 400,
       date: new Date(2001, 11, 22),
+      id: Math.random().toString()
     },
   ];
 

@@ -18,7 +18,7 @@ const Expenses = (props) => {
       />
       {/* displaying components dynamically using map */}
       {props.items.map((i) => (
-        <ExpenseItem title={i.title} amount={i.amount} date={i.date} />
+        <ExpenseItem key = {i.id} title={i.title} amount={i.amount} date={i.date} />
       ))}
     </Card>
   );
