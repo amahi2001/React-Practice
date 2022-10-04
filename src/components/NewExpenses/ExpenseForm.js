@@ -10,7 +10,7 @@ export default function ExpenseForm(props) {
     //saving the input vales as an object (using useState)
     const expenseData = {
       title: EnteredTitle,
-      amount: EnteredAmount,
+      amount: +EnteredAmount,
       date: new Date(EnteredDate.replace(/-/g, '/'))
     }
     //passing the object to parent component via property
