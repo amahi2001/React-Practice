@@ -20,16 +20,26 @@ export default function AddUser(props) {
     //submitting form to add user
     event.preventDefault();
     // props.onAddUser();
+    if(EnteredUserName.trim().length===0 || EnteredAge.trim().length===0){
+        console.log('invalid response');
+        return;
+    }
+    if(+EnteredAge < 1 ){
+        console.log('invalid response');
+        return;
+    }
     console.log(EnteredUserName, EnteredAge);
+    setEnteredAge('')
+    setEnteredUserName('')
   }
 
   return (
     <Card className={styles.input}>
       <form onSubmit={onSubmitForm}>
         <label htmlFor="username">username</label>
-        <input onChange={usernameChangeHandler} id="username" type="text" />
+        <input value={EnteredUserName} onChange={usernameChangeHandler} id="username" type="text" />
         <label htmlFor="age">Age (years)</label>
-        <input onChange={ageChangeHandler} id="age" type="number" />
+        <input value={EnteredAge} onChange={ageChangeHandler} id="age" type="number" />
         <Button type="submit">Add User</Button>
       </form>
     </Card>
