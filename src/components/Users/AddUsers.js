@@ -19,7 +19,7 @@ export default function AddUser(props) {
   function onSubmitForm(event) {
     //submitting form to add user
     event.preventDefault();
-    // props.onAddUser();
+    props.onAdduser(EnteredUserName, EnteredAge);
     if(EnteredUserName.trim().length===0 || EnteredAge.trim().length===0){
         console.log('invalid response');
         return;
