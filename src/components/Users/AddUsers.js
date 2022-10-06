@@ -13,7 +13,7 @@ export default function AddUser(props) {
   const ageInputRef = useRef();
 
   //error
-  const [error, setOnerror] = useState(null);
+  const [error, setOnError] = useState(null);
   // //username
   // const [EnteredUserName, setEnteredUserName] = useState("");
   // function usernameChangeHandler(event) {
@@ -25,7 +25,7 @@ export default function AddUser(props) {
   //   setEnteredAge(event.target.value);
   // }
 
-  function onSubmitForm(event) {
+   function onSubmitForm(event) {
     //submitting form to add user
     event.preventDefault();
 
@@ -38,12 +38,12 @@ export default function AddUser(props) {
     
     if (enteredName.trim().length === 0 || enteredAge.trim().length === 0) {
       console.log("invalid response");
-      setOnerror({ title: "Invalid input", message: "fields can't be empty" });
+      setOnError({ title: "Invalid input", message: "fields can't be empty" });
       return;
     }
     if (+enteredAge < 1) {
       console.log("invalid response");
-      setOnerror({
+      setOnError({
         title: "Invalid input",
         message: "Age can't be less than 1",
       });
@@ -55,9 +55,9 @@ export default function AddUser(props) {
     ageInputRef.current.value = '';
   }
 
-  function close_modal() {
+  function closeModal() {
     //closes Error Modal
-    setOnerror(null);
+    setOnError(null);
   }
 
   return (
@@ -66,7 +66,7 @@ export default function AddUser(props) {
         <ErrorModal
           title={error.title}
           message={error.message}
-          close_modal={close_modal}
+          close_modal={closeModal}
         />
       )}
       <Card className={styles.input}>
