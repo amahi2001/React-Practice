@@ -17,10 +17,10 @@ function App() {
     });
   }
   return (
-    <div>
+    <>
       <AddUser onAdduser={add_user} />
       <UsersList users={usersList} />
-    </div>
+    </>
   );
 }
 
