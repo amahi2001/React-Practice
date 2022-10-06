@@ -40,14 +40,21 @@ export default function AddUser(props) {
     setEnteredAge("");
     setEnteredUserName("");
   }
-  
-  function close_modal(){
+
+  function close_modal() {
+    //closes Error Modal
     setOnerror(null);
   }
 
   return (
     <div>
-     {error && <ErrorModal title={error.title} message={error.message} close_modal={close_modal}/>}
+      {error && (
+        <ErrorModal
+          title={error.title}
+          message={error.message}
+          close_modal={close_modal}
+        />
+      )}
       <Card className={styles.input}>
         <form onSubmit={onSubmitForm}>
           <label htmlFor="username">username</label>
