@@ -1,0 +1,4 @@
+
+if({}){
+    console.log('true')
+}
