@@ -11,10 +11,20 @@ const Login = (props) => {
   const [passwordIsValid, setPasswordIsValid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
 
-  useEffect(
-    setFormIsValid(
-      enteredEmail.includes("@") && enteredPassword.trim().length > 6
-    ),
+  useEffect(() => {
+      const timer = setTimeout(() => {
+        console.log(enteredEmail);
+        setFormIsValid(
+          enteredEmail.includes("@") && enteredPassword.trim().length > 6
+        );
+      }, 500); //checks form validity in 500ms after the dependency changes => reduces # of function calls
+
+      //will run before the side effect executes (except on the first run)
+      return () => {
+        clearTimeout(timer); //clearing timer
+        console.log('cleanup')
+      }
+    },
     //if these are changed, then we will run the useEffect after each component cycle
     [enteredEmail, enteredPassword]
   );
